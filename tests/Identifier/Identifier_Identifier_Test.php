@@ -125,7 +125,7 @@
 		  */
 		public function testFailsWithNoPlural ()
 		{
-			$identifier = new Identifier('test', null, '');
+			$identifier = new Identifier('test', null);
 			
 			$identifier->plural();
 		}
@@ -136,7 +136,7 @@
 		  */
 		public function testFailsWithDoublePlural ()
 		{
-			$identifier = new Identifier('test', 'tests', '');
+			$identifier = new Identifier('test', 'tests');
 			
 			$identifier->plural()->plural();
 		}
