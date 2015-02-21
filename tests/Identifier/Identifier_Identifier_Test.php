@@ -65,6 +65,7 @@
 		{
 			$identifier = new Identifier('thing', 'things');
 			
+			$this->assertEquals($identifier, 'thing');
 			$this->assertEquals($identifier->plural(), 'things');
 			$this->assertEquals($identifier->plural()->uppercase(), 'THINGS');
 		}
