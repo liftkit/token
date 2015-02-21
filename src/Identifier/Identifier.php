@@ -9,14 +9,12 @@
 	class Identifier 
 	{
 		protected $identifier;
-		protected $plural;
 		protected $separator;
 		
 		
-		public function __construct ($identifier, $plural = null, $separator = ' ')
+		public function __construct ($identifier, $separator = ' ')
 		{
 			$this->identifier = $identifier;
-			$this->plural = $plural;
 			
 			if ($separator && is_string($separator)) {
 				$this->separator = $separator;
@@ -38,25 +36,10 @@
 		}
 		
 		
-		public function plural ()
-		{
-			if (! $this->plural) {
-				throw new IdentifierException('No plural form available.');
-			}
-			
-			return new self(
-				$this->plural,
-				null,
-				$this->separator
-			);
-		}
-		
-		
 		public function capitalized ()
 		{
 			return new self(
 				$this->transformCapitalized($this->identifier),
-				$this->transformCapitalized($this->plural),
 				$this->separator
 			);
 		}
@@ -66,7 +49,6 @@
 		{
 			return new self(
 				$this->transformUppercase($this->identifier),
-				$this->transformUppercase($this->plural),
 				$this->separator
 			);
 		}
@@ -76,7 +58,6 @@
 		{
 			return new self(
 				$this->transformLowercase($this->identifier),
-				$this->transformLowercase($this->plural),
 				$this->separator
 			);
 		}
@@ -84,10 +65,7 @@
 		
 		public function camelcase ()
 		{
-			return new self(
-				$this->transformCamelcase($this->identifier),
-				$this->transformCamelcase($this->plural)
-			);
+			return new self($this->transformCamelcase($this->identifier));
 		}
 		
 		
@@ -95,7 +73,6 @@
 		{
 			return new self(
 				$this->transformJoin($this->identifier, $separator),
-				$this->transformJoin($this->plural, $separator),
 				$separator ?: ' '
 			);
 		}

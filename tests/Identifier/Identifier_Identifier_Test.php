@@ -61,16 +61,6 @@
 		}
 		
 		
-		public function testPlural ()
-		{
-			$identifier = new Identifier('thing', 'things');
-			
-			$this->assertEquals($identifier, 'thing');
-			$this->assertEquals($identifier->plural(), 'things');
-			$this->assertEquals($identifier->plural()->uppercase(), 'THINGS');
-		}
-		
-		
 		public function testDashed ()
 		{
 			$identifier = new Identifier('Two Words');
@@ -116,28 +106,6 @@
 		  */
 		public function testFailsWithIncorrectSeparator ()
 		{
-			$identifier = new Identifier('test', null, '');
-		}
-		
-		
-		/**
-		  * @expectedException \LiftKit\Identifier\Exception\Identifier
-		  */
-		public function testFailsWithNoPlural ()
-		{
-			$identifier = new Identifier('test', null);
-			
-			$identifier->plural();
-		}
-		
-		
-		/**
-		  * @expectedException \LiftKit\Identifier\Exception\Identifier
-		  */
-		public function testFailsWithDoublePlural ()
-		{
-			$identifier = new Identifier('test', 'tests');
-			
-			$identifier->plural()->plural();
+			$identifier = new Identifier('test', '');
 		}
 	}
