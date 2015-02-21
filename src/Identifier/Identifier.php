@@ -38,41 +38,55 @@
 		
 		public function capitalized ()
 		{
-			return new self(
-				$this->transformCapitalized($this->identifier),
-				$this->separator
+			return $this->constructTransformed(
+				function ($string)
+				{
+					return $this->transformCapitalized($string);
+				}
 			);
 		}
 		
 		
 		public function uppercase ()
 		{
-			return new self(
-				$this->transformUppercase($this->identifier),
-				$this->separator
+			return $this->constructTransformed(
+				function ($string)
+				{
+					return $this->transformUppercase($string);
+				}
 			);
 		}
 		
 		
 		public function lowercase ()
 		{
-			return new self(
-				$this->transformLowercase($this->identifier),
-				$this->separator
+			return $this->constructTransformed(
+				function ($string)
+				{
+					return $this->transformLowercase($string);
+				}
 			);
 		}
 		
 		
 		public function camelcase ()
 		{
-			return new self($this->transformCamelcase($this->identifier));
+			return $this->constructTransformed(
+				function ($string)
+				{
+					return $this->transformCamelcase($string);
+				}
+			);
 		}
 		
 		
 		public function join ($separator = '')
 		{
-			return new self(
-				$this->transformJoin($this->identifier, $separator),
+			return $this->constructTransformed(
+				function ($string) use ($separator) 
+				{
+					return $this->transformJoin($string, $separator);
+				},
 				$separator ?: ' '
 			);
 		}
@@ -93,6 +107,15 @@
 		public function underscored ()
 		{
 			return $this->join('_');
+		}
+		
+		
+		protected function constructTransformed ($callback, $separator = null)
+		{
+			return new self(
+				$callback($this->identifier),
+				is_null($separator) ? $this->separator : $separator
+			);
 		}
 		
 		
