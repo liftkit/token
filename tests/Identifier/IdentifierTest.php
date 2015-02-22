@@ -1,13 +1,12 @@
 <?php
-
-
-	require_once(__DIR__ . '/../bootstrap.php');
 	
+	namespace LiftKit\Tests\Identifier;
 	
 	use LiftKit\Identifier\Identifier;
+	use PHPUnit_Framework_TestCase;
 	
 	
-	class Identifier_Identifier_Test extends PHPUnit_Framework_TestCase
+	class IdentifierTest extends PHPUnit_Framework_TestCase
 	{
 		
 		

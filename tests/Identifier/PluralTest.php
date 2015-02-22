@@ -1,13 +1,13 @@
 <?php
 
-
-	require_once(__DIR__ . '/../bootstrap.php');
+	namespace LiftKit\Tests\Identifier;
 	
 	
 	use LiftKit\Identifier\Plural as PluralIdentifier;
+	use PHPUnit_Framework_TestCase;
 	
 	
-	class Identifier_Plural_Test extends PHPUnit_Framework_TestCase
+	class PluralTest extends PHPUnit_Framework_TestCase
 	{
 		
 		

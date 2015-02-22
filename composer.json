@@ -12,7 +12,8 @@
 	],
 	"autoload": {
 		"psr-4": {
-			"LiftKit\\": "src/"
+			"LiftKit\\": "src/",
+			"LiftKit\\Tests": "tests"
 		}
 	},
 	"require-dev": {
