@@ -1,9 +1,9 @@
 <?php
 
-	namespace LiftKit\Tests\Identifier;
+	namespace LiftKit\Tests\Token;
 	
 	
-	use LiftKit\Identifier\Plural as PluralIdentifier;
+	use LiftKit\Token\Plural as PluralIdentifier;
 	use PHPUnit_Framework_TestCase;
 	
 	
@@ -22,7 +22,7 @@
 		
 		
 		/**
-		  * @expectedException \LiftKit\Identifier\Exception\Identifier
+		  * @expectedException \LiftKit\Token\Exception\Token
 		  */
 		public function testFailsWithNoPlural ()
 		{

@@ -1,21 +1,21 @@
 <?php
 	
-	namespace LiftKit\Tests\Identifier;
+	namespace LiftKit\Tests\Token;
 	
-	use LiftKit\Identifier\Identifier;
+	use LiftKit\Token\Token;
 	use PHPUnit_Framework_TestCase;
 	
 	
-	class IdentifierTest extends PHPUnit_Framework_TestCase
+	class TokenTest extends PHPUnit_Framework_TestCase
 	{
 		
 		
 		/**
-		  * @expectedException \LiftKit\Identifier\Exception\Identifier
+		  * @expectedException \LiftKit\Token\Exception\Token
 		  */
 		public function testFailsWithIncorrectSeparator ()
 		{
-			$identifier = new Identifier('test', '');
+			$identifier = new Token('test', '');
 		}
 		
 		
@@ -110,6 +110,6 @@
 		
 		protected function createIdentifier ($string)
 		{
-			return new Identifier($string);
+			return new Token($string);
 		}
 	}

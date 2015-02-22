@@ -1,6 +1,6 @@
 <phpunit bootstrap="bootstrap.php">
 	<testsuites>
-		<testsuite name="identifier">
+		<testsuite name="token">
 			<directory>.</directory>
 		</testsuite>
 	</testsuites>

@@ -1,12 +1,12 @@
 <?php
 
 
-	namespace LiftKit\Identifier;
+	namespace LiftKit\Token;
 	
-	use LiftKit\Identifier\Exception\Identifier as IdentifierException;
+	use LiftKit\Token\Exception\Token as TokenException;
 	
 	
-	class Identifier 
+	class Token 
 	{
 		protected $identifier;
 		protected $separator;
@@ -19,7 +19,7 @@
 			if ($separator && is_string($separator)) {
 				$this->separator = $separator;
 			} else {
-				throw new IdentifierException('Invalid separator error.');
+				throw new TokenException('Invalid separator error.');
 			}
 		}
 		

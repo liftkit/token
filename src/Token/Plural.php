@@ -1,12 +1,12 @@
 <?php
 
 
-	namespace LiftKit\Identifier;
+	namespace LiftKit\Token;
 	
-	use LiftKit\Identifier\Exception\Identifier as IdentifierException;
+	use LiftKit\Token\Exception\Token as TokenException;
 	
 	
-	class Plural extends Identifier 
+	class Plural extends Token 
 	{
 		protected $plural;
 		
@@ -16,7 +16,7 @@
 			parent::__construct($identifier, $separator);
 			
 			if (! $plural) {
-				throw new IdentifierException('Invalid plural form.');
+				throw new TokenException('Invalid plural form.');
 			}
 			
 			$this->plural = $plural;
@@ -25,7 +25,7 @@
 		
 		public function plural ()
 		{
-			return new Identifier(
+			return new Token(
 				$this->plural,
 				$this->separator
 			);
