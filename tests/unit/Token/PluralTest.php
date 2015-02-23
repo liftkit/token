@@ -1,6 +1,6 @@
 <?php
 
-	namespace LiftKit\Tests\Token;
+	namespace LiftKit\Tests\Unit\Token;
 	
 	
 	use LiftKit\Token\Plural as PluralIdentifier;

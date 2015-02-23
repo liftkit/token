@@ -1,6 +1,6 @@
 <?php
 	
-	namespace LiftKit\Tests\Token;
+	namespace LiftKit\Tests\Unit\Token;
 	
 	use LiftKit\Token\Token;
 	use PHPUnit_Framework_TestCase;
