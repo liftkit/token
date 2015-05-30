@@ -1,5 +1,5 @@
 # token
-### A library for working with string identifiers.
+A library for working with string identifiers.
 
 ## Capitalized
 
